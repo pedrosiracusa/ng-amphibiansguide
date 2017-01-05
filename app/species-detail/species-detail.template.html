@@ -1,5 +1,5 @@
 
-<section id="header">
+<section id="header" ng-style="$ctrl.bgThemColor">
 	<div class="container-fluid">
 		<h3>Família <strong>{{$ctrl.species.family}}</strong></h3>
 	</div>
@@ -32,15 +32,15 @@
 				<!-- Comparative Size -->
 				<div id="comp-size" class="col-xs-6 text-center">
 					<h4>Tamanho <small>{{$ctrl.species.size}}cm</small></h4>
-					<i id="hand" class="sg-hand" style="font-size:{{$ctrl.getCompSize(handSize=17, renderSize=80).handSize}}px"></i>
-					<i id="species" class="sg-{{$ctrl.species.family | lowercase}}" style="font-size:{{$ctrl.getCompSize(handSize=17, renderSize=80).specSize}}px"></i>
+					<i id="hand" class="sg-hand" style="font-size:{{$ctrl.compSize[0]}}px"></i>
+					<i id="species" class="sg-{{$ctrl.species.family | lowercase}}" ng-style="$ctrl.fgThemColor" style="font-size:{{$ctrl.compSize[1]}}px"></i>
 				</div>
 				<!--/Comparative Size -->
 				
 				<!-- Distribution Map -->
-				<div id="dist-map" class="col-xs-6 text-center">
+				<div class="col-xs-6 text-center">
 					<h4>Distribuição <small>Brasil</small></h4>
-					<div dist-map></div>
+					<div id="dist-map" dist-map ng-style="$ctrl.fgThemColor"></div>
 				</div>
 				<!--/Distribution Map -->
 				

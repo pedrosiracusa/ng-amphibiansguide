@@ -26,7 +26,7 @@ angular.module('speciesDetail')
 			link: function(scope, element, attrs){
 				scope.elementId = element.attr("id");
 				
-				element.attr("ng-class", "{active: ( $ctrl.occStates.indexOf(\"" + scope.elementId +"\") > -1)}");
+				element.attr("ng-class", "{ active: ( $ctrl.occStates.indexOf(\"" + scope.elementId +"\") > -1)}");
 				element.removeAttr("region");
 				$compile(element)(scope);
 			}

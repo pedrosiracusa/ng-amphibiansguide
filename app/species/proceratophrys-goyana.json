@@ -8,5 +8,7 @@
 	"size": 9.8,
 	"occurrenceStates":["DF", "GO"],
 	"description": "É um tipo de sapo de pequeno porte e tem o corpo oval, porte robusto e corpo verrucoso (verrugas), parecendo um pequeno fusquinha. Sua pele é toda rugosa, e alguns indivíduos podem apresentar uma pele a mais por cima cima dos olhos, o que faz lembrar chifres. Tem sua distribuição geográfica restrita às formações abertas dos biomas Cerrado e da Caatinga. É uma espécie noturna, fossórea e insetívora, mas pode ser encontrado durante o dia. Pode ser encontrada no mês de Novembro em altitudes de 1200 metros, próximos à riachos de leito rochoso margeados por gramíneas e arbustos. Machos vocalizam debaixo de folhas, pedras e, às vezes, expostos",
-	"images": [ "img/species/proceratophrys-goyana.0.jpg"]
+	"images": [ "img/species/proceratophrys-goyana.0.jpg"],
+	
+	"family_thematic_color": "#B02727"
 }

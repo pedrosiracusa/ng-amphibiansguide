@@ -7,10 +7,16 @@
 svg path{
 	stroke:white;
 	stroke-width:6;
-	fill:#ccc;
 }
+
+svg  g:not(.active) path{
+	fill: #ccc;
+}
+
 svg g.active path{
-	fill:#888;
 	stroke-width:3;
 }
 
+div#dist-map{
+	height:120px;
+}

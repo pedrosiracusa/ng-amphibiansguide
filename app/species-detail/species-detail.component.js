@@ -8,29 +8,57 @@ angular.module('speciesDetail').component('speciesDetail', {
 				function(species){ 
 					self.setImage(species.images[0]); // call setImage function as soon as species is retrieved
 					self.setOccStates(species.occurrenceStates);
+					self.setThematicColor(species.family_thematic_color);
+					self.setCompSize(handSize=17, renderSize=100);
 				}
 			);
 			
 			self.setImage=function setImage(imageUrl){
 				self.mainImageUrl=imageUrl;
-			};
+			}
 			
 			self.setOccStates=function(statesArr){
 				self.occStates=statesArr;
 			}
 			
-			self.getCompSize = function(handSize, renderSize){
+			self.setThematicColor=function(color){
 				
-				if ( self.species.size > handSize ){ return { 
-						handSize: (handSize / self.species.size) * renderSize,
-						specSize: renderSize
-					};
-					
-				} else{ return{
-						handSize: renderSize,
-						specSize: (self.species.size / handSize) * renderSize
-					};
-				}		
+				hexToGray = function(color){					
+					if (color[0]=="#"){
+						var color = color.replace("#", "");						
+						if(color.length===6){
+							r=parseInt(color.substring(0,2), 16);
+							g=parseInt(color.substring(2,4), 16);
+							b=parseInt(color.substring(4,6), 16);
+							
+							grayscale = Math.floor((r+g+b)/3);
+							return grayscale;
+						}
+					}			
+					throw new Error('Bad Hex');
+				}
+								
+				self.fgThemColor={"fill": color, "color": color}
+				self.bgThemColor={"background-color": color}
+				
+				if(hexToGray(color)<127)
+					self.bgThemColor["color"]="white";	
+				
+			}
+			
+			self.setCompSize = function(handSize, renderSize){
+				var spCompSize = self.species.size/handSize;
+				
+				if ( spCompSize > 1 ){ /* species is bigger than hand */
+					spSize = renderSize;
+					handSize = renderSize/spSize;					
+				} else{ 
+					spSize = spCompSize*renderSize;
+					handSize = renderSize;
+				}
+								
+				self.compSize = [handSize, spSize];	
+				
 			};
 			
 			

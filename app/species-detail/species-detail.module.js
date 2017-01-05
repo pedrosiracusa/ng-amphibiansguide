@@ -1,0 +1,1 @@
+angular.module('speciesDetail', ['ngRoute', 'core.species']);

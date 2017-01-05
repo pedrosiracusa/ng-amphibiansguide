@@ -1,0 +1,55 @@
+
+<section id="header">
+	<div class="container-fluid">
+		<h3>Família <strong>{{$ctrl.species.family}}</strong></h3>
+	</div>
+</section>
+
+
+<!-- <div ng-include="'header.template.html'"></div> -->
+
+
+<section id="content">
+	<div class="container-fluid">
+		<div class="sp-detail row">
+		
+			<!-- Profile Image -->
+			<div class="col-sm-6 img-fill nopadding">
+				<img class="img-responsive" ng-src="{{$ctrl.mainImageUrl}}" alt="{{$ctrl.species.slug}}-img"/>
+			</div>
+			<!--/Profile Image -->
+			
+			<!-- Profile Side -->
+			<div class="col-sm-6">
+			
+				<h1><i>{{$ctrl.species.scientificName}}</i></h1>
+				<h3>{{$ctrl.species.vernacularName}}</h3>
+				
+				<hr/>
+			
+				<p><strong>Descrição: </strong>{{$ctrl.species.description}}</p>
+				
+				<!-- Comparative Size -->
+				<div id="comp-size" class="col-xs-6 text-center">
+					<h4>Tamanho <small>{{$ctrl.species.size}}cm</small></h4>
+					<i id="hand" class="sg-hand" style="font-size:{{$ctrl.getCompSize(handSize=17, renderSize=80).handSize}}px"></i>
+					<i id="species" class="sg-{{$ctrl.species.family | lowercase}}" style="font-size:{{$ctrl.getCompSize(handSize=17, renderSize=80).specSize}}px"></i>
+				</div>
+				<!--/Comparative Size -->
+				
+				<!-- Distribution Map -->
+				<div id="dist-map" class="col-xs-6 text-center">
+					<h4>Distribuição <small>Brasil</small></h4>
+					<div dist-map></div>
+				</div>
+				<!--/Distribution Map -->
+				
+			</div>
+			<!--/Profile Side -->
+		
+			
+		
+			
+		</div>
+	</div>
+</section>

@@ -1,0 +1,19 @@
+<div ng-include="'header.template.html'"></div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10">
+			
+ 			<ul class="species">
+				<li ng-repeat="species in $ctrl.speciess">
+					<a href="#!/species/{{species.slug}}">
+					{{species.vernacularName}} |
+					{{species.scientificName}} -- Família {{species.family}}
+					</a>
+				</li>
+			</ul>
+			
+			
+		</div>
+	</div>
+</div>

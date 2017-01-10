@@ -23,3 +23,11 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+/* Species Comparative Size style */
+species-compsize{
+	font-size:100px;
+}
+species-compsize i{
+	letter-spacing: -30px;
+}

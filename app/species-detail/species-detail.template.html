@@ -31,9 +31,13 @@
 				
 				<!-- Comparative Size -->
 				<div id="comp-size" class="col-xs-6 text-center">
-					<h4>Tamanho <small>{{$ctrl.species.size}}cm</small></h4>
-					<i id="hand" class="sg-hand" style="font-size:{{$ctrl.compSize[0]}}px"></i>
-					<i id="species" class="sg-{{$ctrl.species.family | lowercase}}" ng-style="$ctrl.fgThemColor" style="font-size:{{$ctrl.compSize[1]}}px"></i>
+					<species-compsize 
+							handsize = "17" 
+							animalsize = "$ctrl.species.size"
+							animalicon = "$ctrl.species.family_icon"
+							thematiccolor = "$ctrl.species.family_thematic_color">
+					</species-compsize>
+					
 				</div>
 				<!--/Comparative Size -->
 				
@@ -46,6 +50,7 @@
 				
 			</div>
 			<!--/Profile Side -->
+
 		
 			
 		

@@ -9,7 +9,6 @@ angular.module('speciesDetail').component('speciesDetail', {
 					self.setImage(species.images[0]); // call setImage function as soon as species is retrieved
 					self.setOccStates(species.occurrenceStates);
 					self.setThematicColor(species.family_thematic_color);
-					self.setCompSize(handSize=17, renderSize=100);
 				}
 			);
 			
@@ -44,23 +43,7 @@ angular.module('speciesDetail').component('speciesDetail', {
 				if(hexToGray(color)<127)
 					self.bgThemColor["color"]="white";	
 				
-			}
-			
-			self.setCompSize = function(handSize, renderSize){
-				var spCompSize = self.species.size/handSize;
-				
-				if ( spCompSize > 1 ){ /* species is bigger than hand */
-					spSize = renderSize;
-					handSize = renderSize/spSize;					
-				} else{ 
-					spSize = spCompSize*renderSize;
-					handSize = renderSize;
-				}
-								
-				self.compSize = [handSize, spSize];	
-				
-			};
-			
+			}		
 			
 		}
 	]

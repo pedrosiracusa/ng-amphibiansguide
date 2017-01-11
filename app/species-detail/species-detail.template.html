@@ -1,60 +1,106 @@
 
-<section id="header" ng-style="$ctrl.bgThemColor">
-	<div class="container-fluid">
-		<h3>Família <strong>{{$ctrl.species.family}}</strong></h3>
-	</div>
-</section>
 
+<div id="wrapper" ng-class="{toggled: isToggled && 'in'}">
 
-<!-- <div ng-include="'header.template.html'"></div> -->
-
-
-<section id="content">
-	<div class="container-fluid">
-		<div class="sp-detail row">
+	<div ng-include="'sidebar.template.html'"></div>
+	
+	
+	<div id="page-content-wrapper">
+	
+		<section id="species-detail-nav" ng-style="$ctrl.bgThemColor">
 		
-			<!-- Profile Image -->
-			<div class="col-sm-6 img-fill nopadding">
-				<img class="img-responsive" ng-src="{{$ctrl.mainImageUrl}}" alt="{{$ctrl.species.slug}}-img"/>
-			</div>
-			<!--/Profile Image -->
-			
-			<!-- Profile Side -->
-			<div class="col-sm-6">
-			
-				<h1><i>{{$ctrl.species.scientificName}}</i></h1>
-				<h3>{{$ctrl.species.vernacularName}}</h3>
+		
+			<nav class="navbar">
+				<div class="container-fluid">
+					<div class="row">
+					
+						<div class="sidebar-close">
+							<div class="navbar-header">
+								<button type="button" class="btn navbar-btn" ng-click="isToggled = false">
+									<span class="glyphicon glyphicon-remove-sign"></span>
+								</button>
+							</div>
+						</div> 
+						
+						<div class="col-xs-10">		
+							<div class="navbar-header">
+								<h3 class="navbar-text">Família <strong>{{$ctrl.species.family}}</strong></h3>
+							</div>
+						</div>
+					
+						<div class="col-xs-2 text-right">
+								<button ng-style="$ctrl.bgThemColor" type="button" class="btn navbar-btn" ng-init="isToggled = false" ng-click="isToggled = !isToggled">
+									<span class="glyphicon glyphicon-list"></span>
+								</button>
+						</div>
+						
+					</div>
+				</div>
+			</nav>
+
+		</section>
+
+
+
+		<!-- <div ng-include="'header.template.html'"></div> -->
+
+
+		<section id="content">
+			<div class="container-fluid">
+				<div class="sp-detail row">
 				
-				<hr/>
-			
-				<p><strong>Descrição: </strong>{{$ctrl.species.description}}</p>
+					<!-- Profile Image -->
+					<div class="col-sm-6 img-fill nopadding">
+						<img class="img-responsive" ng-src="{{$ctrl.mainImageUrl}}" alt="{{$ctrl.species.slug}}-img"/>
+					</div>
+					<!--/Profile Image -->
+					
+					<!-- Profile Side -->
+					<div class="col-sm-6">
+					
+						<h1><i>{{$ctrl.species.scientificName}}</i></h1>
+						<h3>{{$ctrl.species.vernacularName}}</h3>
+						
+						<hr/>
+					
+						<p><strong>Descrição: </strong>{{$ctrl.species.description}}</p>
+						
+						<!-- Comparative Size -->
+						<div id="comp-size" class="col-xs-6 text-center">
+							<species-compsize 
+									handsize = "17" 
+									animalsize = "$ctrl.species.size"
+									animalicon = "$ctrl.species.family_icon"
+									thematiccolor = "$ctrl.species.family_thematic_color">
+							</species-compsize>
+							
+						</div>
+						<!--/Comparative Size -->
+						
+						<!-- Distribution Map -->
+						<div class="col-xs-6 text-center">
+							<h4>Distribuição <small>Brasil</small></h4>
+							<div id="dist-map" dist-map ng-style="$ctrl.fgThemColor"></div>
+						</div>
+						<!--/Distribution Map -->
+						
+					</div>
+					<!--/Profile Side -->
+
 				
-				<!-- Comparative Size -->
-				<div id="comp-size" class="col-xs-6 text-center">
-					<species-compsize 
-							handsize = "17" 
-							animalsize = "$ctrl.species.size"
-							animalicon = "$ctrl.species.family_icon"
-							thematiccolor = "$ctrl.species.family_thematic_color">
-					</species-compsize>
+					
+				
 					
 				</div>
-				<!--/Comparative Size -->
-				
-				<!-- Distribution Map -->
-				<div class="col-xs-6 text-center">
-					<h4>Distribuição <small>Brasil</small></h4>
-					<div id="dist-map" dist-map ng-style="$ctrl.fgThemColor"></div>
-				</div>
-				<!--/Distribution Map -->
-				
 			</div>
-			<!--/Profile Side -->
+		</section>
 
-		
 			
-		
 			
-		</div>
+			
+			
 	</div>
-</section>
+</div>
+	
+	
+

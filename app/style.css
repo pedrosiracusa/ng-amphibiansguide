@@ -31,3 +31,27 @@ species-compsize{
 species-compsize i{
 	letter-spacing: -30px;
 }
+
+/* Species detail header */
+
+section#species-detail-nav button,
+section#species-detail-nav button:focus,
+section#species-detail-nav button:active,
+section#species-detail-nav button.btn.navbar-btn:hover{
+	background-color:transparent;
+	border:none;
+	outline:none;
+	box-shadow:none;
+}
+
+section#species-detail-nav span{
+	font-size: 1.5em;
+}
+
+section#species-detail-nav .sidebar-close{
+	position:absolute;
+	margin-left:-50px;
+	z-index:1000;
+	
+}
+

@@ -98,22 +98,3 @@ body {
     color: #fff;
     background: none;
 }
-
-@media(min-width:768px) {
-    #wrapper {
-        padding-right: 0;
-    }
-
-    #wrapper.toggled {
-        padding-right: 250px;
-    }
-
-    #sidebar-wrapper {
-        width: 0;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 250px;
-    
-    }
-}

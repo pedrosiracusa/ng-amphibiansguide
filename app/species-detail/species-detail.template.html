@@ -1,11 +1,11 @@
+<div id="wrapper" ng-class="{toggled: $ctrl.isToggled}">
 
 
-<div id="wrapper" ng-class="{toggled: isToggled && 'in'}">
-
-	<div ng-include="'sidebar.template.html'"></div>
+	<div id="sidebar-wrapper">
+		<sidebar></sidebar>
+	</div>
 	
-	
-	<div id="page-content-wrapper">
+	<div id="page-content-wrapper" ng-click="$ctrl.closeSidebarIfOpen()">
 	
 		<section id="species-detail-nav" ng-style="$ctrl.bgThemColor">
 		
@@ -13,15 +13,7 @@
 			<nav class="navbar">
 				<div class="container-fluid">
 					<div class="row">
-					
-						<div class="sidebar-close">
-							<div class="navbar-header">
-								<button type="button" class="btn navbar-btn" ng-click="isToggled = false">
-									<span class="glyphicon glyphicon-remove-sign"></span>
-								</button>
-							</div>
-						</div> 
-						
+										
 						<div class="col-xs-10">		
 							<div class="navbar-header">
 								<h3 class="navbar-text">Família <strong>{{$ctrl.species.family}}</strong></h3>
@@ -29,7 +21,7 @@
 						</div>
 					
 						<div class="col-xs-2 text-right">
-								<button ng-style="$ctrl.bgThemColor" type="button" class="btn navbar-btn" ng-init="isToggled = false" ng-click="isToggled = !isToggled">
+								<button ng-style="$ctrl.bgThemColor" type="button" class="btn navbar-btn" ng-init="$ctrl.isToggled = false" ng-click="$ctrl.openSidebar()">
 									<span class="glyphicon glyphicon-list"></span>
 								</button>
 						</div>

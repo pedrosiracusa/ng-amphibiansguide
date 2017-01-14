@@ -1,1 +1,4 @@
-angular.module('speciesDetail', ['ngRoute', 'core.species', 'speciesCompsize']);
+angular.module('speciesDetail', [	'ngRoute', 
+									'core.species', 
+									'speciesCompsize',
+									'sidebar']);
